@@ -5,5 +5,5 @@ fun main(){
     val minutes = allSecondsSpace / 60 //108
     val restOfSeconds = allSecondsSpace % 60 //0
 
-    println("$minutes:0$restOfSeconds")
+    println(String.format("%d:%02d", minutes, restOfSeconds))
 }
