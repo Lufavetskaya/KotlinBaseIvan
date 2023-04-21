@@ -7,14 +7,13 @@ fun main(){
     val gradeStudentD = 5
     var sumAllGrades = 0
 
-    var allGradeClassABCD = mutableListOf(gradeStudentA, gradeStudentB, gradeStudentC, gradeStudentD)
+    val allGradeClassABCD = mutableListOf(gradeStudentA, gradeStudentB, gradeStudentC, gradeStudentD)
 
-    for(grades in allGradeClassABCD){
-        var grade = grades
-        sumAllGrades += grade
+    for (grades in allGradeClassABCD) {
+        sumAllGrades += grades
     }
 
-    var averageGradeClass: Float = (sumAllGrades/(allGradeClassABCD.size.toFloat()))
+    val averageGradeClass: Float = (sumAllGrades / (allGradeClassABCD.size.toFloat()))
 
     println(String.format("%.2f", averageGradeClass))
 }
