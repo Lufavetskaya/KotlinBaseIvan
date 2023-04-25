@@ -1,13 +1,15 @@
 package lesson_2
 
 fun main() {
-    val lootResCristalOre = 7
+    val lootResCrystalOre = 7
     val lootResIronOre = 11
     val buffResOre = 0.2
+    val resIronOre = "Iron Ore"
+    val resCrystalOre = "Crystal Ore"
 
-    val buffLootResCristalOre = lootResCristalOre * buffResOre
+    val buffLootResCrystalOre = lootResCrystalOre * buffResOre
     val buffLootIronOre = lootResIronOre * buffResOre
 
-    println(String.format("%.0f", buffLootResCristalOre))
-    println(String.format("%.0f", buffLootIronOre))
+    println(String.format("Bonus %s: %.0f", resCrystalOre, buffLootResCrystalOre))
+    println(String.format("Bonus %s: %.0f", resIronOre, buffLootIronOre))
 }
