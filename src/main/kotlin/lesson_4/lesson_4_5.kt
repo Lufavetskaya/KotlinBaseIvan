@@ -1,10 +1,10 @@
 package lesson_4
 
-val HULL_BREACH = false
-val MIN_TEAM_SIZE = 55
-val MAX_TEAM_SIZE = 70
-val BOX_PROVISION = 50
-val GOOD_WEATHER = true
+const val HULL_BREACH = false
+const val MIN_TEAM_SIZE = 55
+const val MAX_TEAM_SIZE = 70
+const val BOX_PROVISION = 50
+const val GOOD_WEATHER = true
 
 fun main() {
     val thisHullBreach = readln().toBoolean()
