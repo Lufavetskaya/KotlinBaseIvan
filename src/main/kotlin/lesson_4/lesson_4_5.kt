@@ -12,5 +12,16 @@ fun main() {
     val thisBoxProvision = readln().toInt()
     val thisWeatherGood = readln().toBoolean()
 
-    println("Может корабль покинуть порт: ${((thisHullBreach == HULL_BREACH) && (thisTeamSize >= MIN_TEAM_SIZE && thisTeamSize < MAX_TEAM_SIZE) && (thisBoxProvision > BOX_PROVISION)) || ((thisHullBreach != HULL_BREACH) && (thisTeamSize == MAX_TEAM_SIZE) && (thisBoxProvision > BOX_PROVISION) && (thisWeatherGood == GOOD_WEATHER))}")
+    val canShipLeavePort = (
+            (thisHullBreach == HULL_BREACH) &&
+                    (thisTeamSize >= MIN_TEAM_SIZE && thisTeamSize < MAX_TEAM_SIZE) &&
+                    (thisBoxProvision > BOX_PROVISION)
+            ) || (
+            (thisHullBreach != HULL_BREACH) &&
+                    (thisTeamSize == MAX_TEAM_SIZE) &&
+                    (thisBoxProvision > BOX_PROVISION) &&
+                    (thisWeatherGood == GOOD_WEATHER))
+
+    println("Может корабль покинуть порт: $canShipLeavePort")
 }
+
