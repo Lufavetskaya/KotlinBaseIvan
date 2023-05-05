@@ -1,10 +1,8 @@
 package lesson_5
 
 fun main() {
-    val winNumbersList = (1..100).toList()
-
-    val winNumber1 = winNumbersList.random()
-    val winNumber2 = winNumbersList.random()
+    val winNumber1 = (1..100).random()
+    val winNumber2 = (1..100).random()
 
     println("Какие два числа из 100(включительно) сегодня принесут удачу?\nНапечатайте поочередно, на разных строках.")
 
