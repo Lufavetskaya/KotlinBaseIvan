@@ -8,6 +8,8 @@ fun main() {
 
     val yearOfBirthUser = readln().toInt()
 
-    println(if ((NOW_YEAR - yearOfBirthUser) >= AGE_FOR_LOGIN) "Показать экран со скрытым контентом"
-    else "Надо еще кушать, спать и подрастать.")
+    println(
+        if ((NOW_YEAR - yearOfBirthUser) >= AGE_FOR_LOGIN) "Показать экран со скрытым контентом"
+        else "Надо еще кушать, спать и подрастать."
+    )
 }
