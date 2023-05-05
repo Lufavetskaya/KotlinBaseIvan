@@ -8,7 +8,7 @@ fun main() {
 
     val inputUserLogin = readln()
 
-    if(inputUserLogin != LOGIN_PERSON) println("Пользователь не найден. Пройдите регистрацию.")
+    if (inputUserLogin != LOGIN_PERSON) println("Пользователь не найден. Пройдите регистрацию.")
     else {
         println("Введите пароль.")
 
