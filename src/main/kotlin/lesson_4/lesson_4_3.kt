@@ -1,4 +1,4 @@
-package lessson_4
+package lesson_4
 
 const val FACTOR_SUN_FOR_LEGUMES = true
 const val FACTOR_OPEN_TENT_FOR_LEGUMES = true
