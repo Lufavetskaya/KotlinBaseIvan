@@ -7,7 +7,7 @@ fun main() {
     var countSecondsUser = secondsUser
 
     do {
-        println("Осталось секунд: $2countSecondsUser")
+        println("Осталось секунд: $countSecondsUser")
         Thread.sleep(1000)
         countSecondsUser--
     } while (countSecondsUser > 0u)
