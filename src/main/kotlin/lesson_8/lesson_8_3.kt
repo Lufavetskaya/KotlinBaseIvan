@@ -11,4 +11,5 @@ fun main() {
     else if (ingredientsUser == ingredientsForCheesecake[ingredientsForCheesecake.indexOf(ingredientsUser)]) {
         println("Ингредиент $ingredientsUser в рецепте есть")
     }
+
 }
