@@ -7,6 +7,7 @@ fun main() {
     println("Какой ингредиент нужно проверить на наличие?")
     val ingredientsUser = readln()
     val badAnswerIndexOf = -1
+
     if (ingredientsForCheesecake.indexOf(ingredientsUser) == badAnswerIndexOf) println("Такого ингредиента в рецепте нет")
     else if (ingredientsUser == ingredientsForCheesecake[ingredientsForCheesecake.indexOf(ingredientsUser)]) {
         println("Ингредиент $ingredientsUser в рецепте есть")
