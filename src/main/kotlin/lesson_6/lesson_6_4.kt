@@ -9,10 +9,10 @@ fun main() {
     while (numberForTry < 6) {
         println("Попытка ${numberForTry++}")
         val inputUser = readln().toInt()
-        if (inputUser == randomWinNumber){
+        if (inputUser == randomWinNumber) {
             println("Это была великолепная игра!")
-            break}
-        else if (numberForTry == 6 && inputUser != randomWinNumber) println("Было загадано число $randomWinNumber")
+            break
+        } else if (numberForTry == 6) println("Было загадано число $randomWinNumber")
         else println("Еще раз!")
-        }
+    }
 }
