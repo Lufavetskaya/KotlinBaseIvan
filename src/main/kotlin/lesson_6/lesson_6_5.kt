@@ -6,7 +6,7 @@ fun main() {
 
     println("Проверка на человека.\nРеши пример на сложение чисел от 1 до 9.")
 
-    while (numberForTry < 3) {
+    while (numberForTry < maxTry) {
         println("У тебя ${maxTry - numberForTry++} попытки")
 
         val firstSummand = (1..9).random()
