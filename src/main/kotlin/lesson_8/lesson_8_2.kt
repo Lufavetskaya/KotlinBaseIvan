@@ -11,8 +11,7 @@ fun main() {
         if (ingredientsUser == ingredientsForCheesecake[i]) {
             println("Ингредиент $ingredientsUser в рецепте есть")
             break
-        } else if ((i == ingredientsForCheesecake.lastIndex) && (ingredientsUser != ingredientsForCheesecake[i])) println(
-            "Такого ингредиента в рецепте нет"
-        )
+        } else if ((i == ingredientsForCheesecake.lastIndex) && (ingredientsUser != ingredientsForCheesecake[i]))
+            println("Такого ингредиента в рецепте нет")
     }
 }
