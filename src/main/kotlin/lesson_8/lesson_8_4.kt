@@ -11,17 +11,15 @@ fun main() {
 
     val userChangeIngr = readln()
     val userWantIngr: String
+    val notOnList = -1
 
-    for (i in ingredientsForChickenPie.indices) {
-        if (userChangeIngr == ingredientsForChickenPie[i]) {
-            println("А на что заменим?")
-            userWantIngr = readln()
-            ingredientsForChickenPie[i] = userWantIngr
-            print("Готово! Вы сохранили следующий список: ")
-            ingredientsForChickenPie.forEach { println(it) }
-            break
-        } else if (i == ingredientsForChickenPie.lastIndex) println("Такого ингредиента нет в списке")
+    if (notOnList == ingredientsForChickenPie.indexOf(userChangeIngr)) {
+        println("Такого ингредиента нет в списке")
+    } else if (userChangeIngr == ingredientsForChickenPie[ingredientsForChickenPie.indexOf(userChangeIngr)]) {
+        println("А на что заменим?")
+        userWantIngr = readln()
+        ingredientsForChickenPie[ingredientsForChickenPie.indexOf(userChangeIngr)] = userWantIngr
+        print("Готово! Вы сохранили следующий список: ")
+        ingredientsForChickenPie.forEach { println(it) }
     }
-
-
 }
