@@ -7,14 +7,5 @@ fun main() {
         val forRandomArray = (1..15).random()
         arrayWatchAD[i] = forRandomArray
     }
-
-    var sumWatchADWeek = 0
-
-    for (i in arrayWatchAD.indices) {
-        sumWatchADWeek += arrayWatchAD[i]
-    }
-
-    println(sumWatchADWeek)
-
-    //println("${arrayWatchAD.sum()}")
+    println("${arrayWatchAD.sum()}")
 }
