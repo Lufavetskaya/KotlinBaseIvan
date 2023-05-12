@@ -3,6 +3,7 @@ package lesson_10
 fun main() {
     println("Укажите длину пароля")
     val lengthPassUser = readln().toInt()
+
     println("Ваш пароль: ${createPass(lengthPassUser)}")
 }
 
