@@ -1,23 +1,20 @@
 package lesson_9
 
 fun main() {
-    val productSet = MutableList(5) { readln() }
-    val uniqueProduct = mutableSetOf<String>()
-    productSet.sort()
-    uniqueProduct.addAll(productSet)
+    val productSet = MutableList(5) { readln() }.toSet().sorted()
     var countForPrint = 1
 
-    for (i in uniqueProduct) {
-        if (countForPrint == 0) {
-            print("${i.uppercase()},")
+    for (i in productSet) {
+        if (countForPrint == 1) {
+            print("${i.replaceFirstChar { it.uppercase() }}, ")
             countForPrint++
-        } else if (countForPrint == uniqueProduct.size) {
+        } else if (countForPrint == productSet.size) {
             i.lowercase()
-            print("$i.")
+            print("${i.replaceFirstChar { it.lowercase() }}.")
             countForPrint++
         } else {
             i.lowercase()
-            print("$i, ")
+            print("${i.replaceFirstChar { it.lowercase() }}, ")
             countForPrint++
         }
     }
