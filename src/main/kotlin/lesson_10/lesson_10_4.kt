@@ -5,24 +5,28 @@ var count = 0
 fun main() {
 
     do {
-        val firstRollHuman = rollDice()
-        val secondRollHuman = rollDice()
-        val firstRollAI = rollDice()
-        val secondRollAI = rollDice()
+        println("Ход человечества:")
+        val sumHuman = rollDice()
 
-        roundGame(firstRollHuman, secondRollHuman, firstRollAI, secondRollAI)
-        resultSumRoll(sumRoll(firstRollHuman, secondRollHuman), sumRoll(firstRollAI, secondRollAI))
+        println("Ход ai:")
+        val sumAI = rollDice()
+
+        resultSumRoll(sumHuman, sumAI)
 
         println("Хотите бросить кости еще раз Введите Да или Нет")
-        val answerUser = readln()
         val goodAnswerForAdd = "Да"
-    } while (answerUser == goodAnswerForAdd)
+    } while (readln() == goodAnswerForAdd)
 
     println("$count количества выйгрышных партий человека")
 }
 
 fun rollDice(): Int {
-    return (1..6).random()
+    val firstRoll = (1..6).random()
+    val secondRoll = (1..6).random()
+
+    roundGame(firstRoll, secondRoll)
+
+    return sumRoll(firstRoll, secondRoll)
 }
 
 fun sumRoll(firstR: Int, secondR: Int): Int {
@@ -37,7 +41,6 @@ fun resultSumRoll(sum1: Int, sum2: Int) {
     else println("Победил баланс сил.")
 }
 
-fun roundGame(firstRollHuman: Int, secondRollHuman: Int, firstRollAI: Int, secondRollAI: Int) {
-    println("Ход человечества: первый куб - $firstRollHuman, второй - $secondRollHuman")
-    println("Ход ai: первый куб - $firstRollAI, второй - $secondRollAI")
+fun roundGame(firstRoll: Int, secondRoll: Int) {
+    println("первый куб - $firstRoll, второй - $secondRoll")
 }
