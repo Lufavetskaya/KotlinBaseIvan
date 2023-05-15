@@ -9,7 +9,7 @@ fun main() {
 
 fun createPass(length: Int): String {
     var password = ""
-    val allSymbolsForPass = ('!'..'/') + ' '
+    val allSymbolsForPass = (' '..'/')
     val allNumberFoPass = (0..9)
     for (i in 1..length) {
         if (i % 2 == 0) password += allNumberFoPass.random()
