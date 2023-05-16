@@ -7,11 +7,15 @@ fun main() {
     println("придумайте пароль")
     val userPass = readln()
 
-    checkLoginAnfPass(userLogin, userPass)
+    printMessForUser(checkLoginAndPass(userLogin, userPass))
 }
 
-fun checkLoginAnfPass(login: String, pass: String) {
-    if (login.length < 4 || pass.length < 4) {
-        println("Логин или пароль недостаточно длинные")
-    } else println("Welcome, honey!")
+fun checkLoginAndPass(login: String, pass: String): Boolean{
+    return  (login.length < 4 || pass.length < 4)
+
+}
+
+fun printMessForUser(checkPass: Boolean) {
+    if (checkPass) println("Логин или пароль недостаточно длинные")
+    else println("Welcome, honey!")
 }
