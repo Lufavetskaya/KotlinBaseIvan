@@ -3,7 +3,7 @@ package lesson_11_5
 class Forum() {
     val allMess = mutableListOf<String>()
 
-    fun newUser(id: Int, login: String, password: String, email: String, bio: String): User {
+    fun newUser(): User {
         return User()
     }
 

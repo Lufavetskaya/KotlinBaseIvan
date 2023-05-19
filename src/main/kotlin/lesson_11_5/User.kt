@@ -1,12 +1,12 @@
 package lesson_11_5
 
-class User(
-    var id: Int = 0,
-    var login: String = "",
-    var password: String = "",
-    var email: String = "",
-    var bio: String = "",
-) {
+class User() {
+
+    var id: Int = 0
+    var login: String = ""
+    var password: String = ""
+    var email: String = ""
+    var bio: String = ""
 
 
     fun printInfoUser() {

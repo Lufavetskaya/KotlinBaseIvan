@@ -4,11 +4,13 @@ fun main() {
 
     val forum = Forum()
 
-    val newUser0 = forum.newUser(4, "Gocha", "pass1", "gocha@mail.com", "")
+    val newUser0 = forum.newUser()
+    newUser0.id = 4
+    newUser0.login = "Gocha"
 
-    val newUser1 = forum.newUser(1, "Krosh", "pass2", "krosh@mail.com", "")
-
-    //println(newUser0.email) help
+    val newUser1 = forum.newUser()
+    newUser1.id = 5
+    newUser1.login = "Krosh"
 
     forum.newMessage(newUser0.id, newUser0.login)
     forum.newMessage(newUser0.id, newUser0.login)
