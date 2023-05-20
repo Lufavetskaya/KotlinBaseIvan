@@ -19,3 +19,12 @@ fun main() {
     println("${secondUser.id}, ${secondUser.login}, ${secondUser.password}, ${secondUser.email}")
 
 }
+
+class User1(
+    val id: Int,
+    val login: String,
+    val password: String,
+    val email: String,
+) {
+
+}
