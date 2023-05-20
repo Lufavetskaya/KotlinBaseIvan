@@ -1,4 +1,4 @@
-package lesson_12_5
+package lesson_12
 
 import kotlin.random.Random
 
@@ -28,4 +28,26 @@ fun main() {
     }
 
     println("Дождик шел: ${rainDay} дней\nДнем было в среднем: ${averageTDay / listWeather.size}С\nНочью было в среднем: ${averageTNight / listWeather.size}С\nДавление среднее за деньки: ${averagePressure / listWeather.size}")
+}
+
+class KeepWeather5(
+    var temperatureDay: Int,
+    var temperatureNight: Int,
+    var rain: Boolean = false,
+    var atmosphericPressure: Int
+) {
+
+    init {
+        printWeather()
+    }
+
+    fun printWeather() {
+        println(
+            """Температура днем: $temperatureDay
+               |Температура ночь: $temperatureNight
+               |Налчиие дождя: $rain
+               |Атмосферное давление: $atmosphericPressure
+           """.trimMargin()
+        )
+    }
 }
