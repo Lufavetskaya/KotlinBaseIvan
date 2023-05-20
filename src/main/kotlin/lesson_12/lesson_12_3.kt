@@ -1,6 +1,12 @@
-package lesson_12_3
+package lesson_12
 
-class KeepWeather(
+fun main() {
+    val sixthDayLife = KeepWeatherTask3(1, 10, atmosphericPressure = 660)
+
+    sixthDayLife.printWeather()
+}
+
+class KeepWeatherTask3(
     var temperatureDay: Int,
     var temperatureNight: Int,
     var rain: Boolean = false,
@@ -16,6 +22,4 @@ class KeepWeather(
           """.trimMargin()
         )
     }
-
-
 }
