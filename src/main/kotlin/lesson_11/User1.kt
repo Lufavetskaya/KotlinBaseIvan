@@ -6,4 +6,5 @@ class User1(
     val password: String,
     val email: String,
 ) {
+
 }

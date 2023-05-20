@@ -17,4 +17,5 @@ fun main() {
 
     println("${firstUser.id}, ${firstUser.login}, ${firstUser.password}, ${firstUser.email}")
     println("${secondUser.id}, ${secondUser.login}, ${secondUser.password}, ${secondUser.email}")
+
 }
