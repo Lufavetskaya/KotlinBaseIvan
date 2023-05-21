@@ -41,7 +41,6 @@ class IcebreakerShip2(
         println("$nameShip прокладывает дорогу во льду")
     }
 
-
 }
 
 class CargoShip2(
