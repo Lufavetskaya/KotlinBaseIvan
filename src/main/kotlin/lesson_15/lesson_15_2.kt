@@ -1,6 +1,6 @@
 package lesson_15
 
-fun main(){
+fun main() {
 
     val dataTemperature = DataTemperature("Server")
     dataTemperature.sendData()
@@ -12,18 +12,18 @@ fun main(){
 
 abstract class UnderlyingMessage(
     val nameServer: String
-){
-    fun connectToServer(nameServer: String){
+) {
+    fun connectToServer(nameServer: String) {
         println("Подключились к серверу $nameServer.")
     }
 
-    open fun sendData(){
+    open fun sendData() {
         println("Отправили данные на сервер $nameServer.")
     }
 
 }
 
-class DataTemperature(nameServer: String) : UnderlyingMessage(nameServer){
+class DataTemperature(nameServer: String) : UnderlyingMessage(nameServer) {
     override fun sendData() {
         super.connectToServer(nameServer)
         println("Отправили данные о температуре на сервер $nameServer.")
