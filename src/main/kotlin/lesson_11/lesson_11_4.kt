@@ -2,26 +2,9 @@ package lesson_11
 
 fun main() {
 
-    val firstContact = Contact(
-        avatarPerson = "link avatar",
-        firstNamePerson = "Wife",
-        phoneNumberPersonMain = "8 (999) 999-00-00",
-        emailPerson = "wife@mail.com"
-    )
-
-    val secondContact = Contact(
-        avatarPerson = "link avatar",
-        firstNamePerson = "Friend1",
-        phoneNumberPersonMain = "8 (999) 999-11-11",
-        emailPerson = "friend1@mail.com"
-    )
-
-    val thirdContact = Contact(
-        avatarPerson = "link avatar",
-        firstNamePerson = "Friend2",
-        phoneNumberPersonMain = "8 (999) 999-22-22",
-        emailPerson = "friend2@mail.com"
-    )
+    val firstContact = FavoritesContact("Wife", "spouse")
+    val secondContact = FavoritesContact("Friend1", "friends")
+    val thirdContact = FavoritesContact("Friend2", "friends")
 
     val fourthContact: Contact = Contact(
         avatarPerson = "link avatar",
@@ -30,13 +13,9 @@ fun main() {
         phoneNumberPersonMain = "8 (999) 999-42-42",
         phoneNumberPersonHome = "8 (999) 999-42-42",
         emailPerson = "mail@mail.ru",
-        spousePerson = firstContact.firstNamePerson,
-        setFavoritesFriends = setOf(secondContact.firstNamePerson, thirdContact.firstNamePerson)
-
+        favoritesContact = listOf(firstContact, secondContact, thirdContact)
     )
-
 }
-
 
 class Contact(
     val avatarPerson: String,
@@ -45,8 +24,7 @@ class Contact(
     val phoneNumberPersonMain: String,
     val phoneNumberPersonHome: String = "",
     val emailPerson: String,
-    var setFavoritesFriends: Set<String> = setOf(),
-    var spousePerson: String = "",
+    var favoritesContact: List<FavoritesContact>,
 ) {
     fun sendMessPerson() {}
 
@@ -57,6 +35,9 @@ class Contact(
     fun sendEmailPerson() {}
 
     fun addFavorites() {}
-
-
 }
+
+class FavoritesContact(
+    val name: String,
+    val typeFavorites: String,
+)
