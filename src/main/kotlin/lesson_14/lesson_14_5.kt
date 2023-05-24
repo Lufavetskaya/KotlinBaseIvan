@@ -3,19 +3,23 @@ package lesson_14
 import java.lang.Math.PI
 import kotlin.math.sqrt
 
+const val COLOR_RED = "красный"
+const val COLOR_GREEN = "зеленый"
+const val COLOR_BLACK = "черный"
+
 fun main() {
 
-    val firstCircle = Circle("зеленый", 2.11)
-    val secondCircle = Circle("красный", 9.0)
-    val thirdCircle = Circle("черный", 2.0)
+    val firstCircle = Circle(COLOR_GREEN, 2.11)
+    val secondCircle = Circle(COLOR_RED, 9.0)
+    val thirdCircle = Circle(COLOR_BLACK, 2.0)
 
-    val firstRectangle = Rectangle("зеленый", 2.11, 3.0)
-    val secondRectangle = Rectangle("красный", 9.0, 3.0)
-    val thirdRectangle = Rectangle("черный", 2.0, 9.0)
+    val firstRectangle = Rectangle(COLOR_GREEN, 2.11, 3.0)
+    val secondRectangle = Rectangle(COLOR_RED, 9.0, 3.0)
+    val thirdRectangle = Rectangle(COLOR_BLACK, 2.0, 9.0)
 
-    val firstTriangle = Triangle("зеленый", 4.0, 6.0, 5.42)
-    val secondTriangle = Triangle("красный", 7.0, 7.14, 7.36)
-    val thirdTriangle = Triangle("черный", 2.0, 6.24, 1.13)
+    val firstTriangle = Triangle(COLOR_GREEN, 4.0, 6.0, 5.42)
+    val secondTriangle = Triangle(COLOR_RED, 7.0, 7.14, 7.36)
+    val thirdTriangle = Triangle(COLOR_BLACK, 2.0, 6.24, 1.13)
 
     val allFigure = listOf<Figure>(
         firstCircle,
@@ -33,7 +37,7 @@ fun main() {
     fun sumAreaAllRedFigure(list: List<Figure>) {
         var sum: Double = 0.0
         for (figure in list) {
-            if (figure.color == "красный") {
+            if (figure.color == COLOR_RED) {
                 sum += figure.calculateArea()
             }
         }
@@ -44,7 +48,7 @@ fun main() {
     fun sumPerimeterAllRedFigure(list: List<Figure>) {
         var sum: Double = 0.0
         for (figure in list) {
-            if (figure.color == "красный") {
+            if (figure.color == COLOR_RED) {
                 sum += figure.calculatePerimeter()
             }
         }
