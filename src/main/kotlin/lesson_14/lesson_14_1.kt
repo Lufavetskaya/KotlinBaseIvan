@@ -4,17 +4,17 @@ fun main() {
 
     val sShip = standardShip("Королева Мэри 2", 56, 151_400)
 
-    sShip.infoSpeedShip()
-    sShip.infoCapacityShip()
+    sShip.getShipSpeedInfo()
+    sShip.getCapacityShipInfo()
 
 }
 
 class standardShip(val nameShip: String, val speedShip: Int, val loadCapacityShip: Int) {
-    fun infoSpeedShip() {
+    fun getShipSpeedInfo() {
         println("Скорость коробля $nameShip: $speedShip км/ч")
     }
 
-    fun infoCapacityShip() {
+    fun getCapacityShipInfo() {
         println("Грузоподъемность коробля $nameShip: $loadCapacityShip брт")
     }
 }
