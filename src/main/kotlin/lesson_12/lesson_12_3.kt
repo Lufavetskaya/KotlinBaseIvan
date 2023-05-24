@@ -10,7 +10,7 @@ class KeepWeatherTask3(
     var temperatureDay: Int,
     var temperatureNight: Int,
     var rain: Boolean = false,
-    var atmosphericPressure: Int
+    var atmosphericPressure: Int,
 ) {
 
     fun printWeather() {
