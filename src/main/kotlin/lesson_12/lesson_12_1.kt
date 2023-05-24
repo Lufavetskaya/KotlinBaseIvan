@@ -19,7 +19,7 @@ fun main() {
 
 }
 
-class KeepWeatherState() {
+class KeepWeatherState{
 
     var temperatureDay: Int = 0
     var temperatureNight: Int = 0
