@@ -4,49 +4,26 @@ fun main() {
 
     val forum = Forum()
 
-    val newUser0 = forum.newUser()
-    newUser0.id = 4
-    newUser0.login = "Gocha"
+    val newUser1 = forum.newUser("Krosh")
+    val newUser2 = forum.newUser("Gocha")
 
-    val newUser1 = forum.newUser()
-    newUser1.id = 5
-    newUser1.login = "Krosh"
+    forum.newMessage(newUser1.uniqueID, newUser1.login, "буб")
+    forum.newMessage(newUser2.uniqueID, newUser2.login, "буб2")
+    forum.newMessage(newUser2.uniqueID, newUser2.login, "буб3")
 
-    forum.newMessage(newUser0.id, newUser0.login)
-    forum.newMessage(newUser0.id, newUser0.login)
-    forum.newMessage(newUser1.id, newUser1.login)
-
-    forum.printThread(forum.allMess)
-    newUser0.fillingBioUser()
+    forum.printThread(forum.allMessages)
 
 }
 
-class User() {
-
-    var id: Int = 0
-    var login: String = ""
-    var password: String = ""
-    var email: String = ""
-    var bio: String = ""
+class User( val uniqueID: Int,  val login: String) {
+    val email: String = ""
+    val password: String = ""
+    val bio: String = ""
 
 
     fun printInfoUser() {
-        print("$id, $login, $password, $email")
+        print("$uniqueID, $login, $password, $email")
         if (bio.isNotEmpty()) println(", $bio")
-    }
-
-    fun fillingBioUser() {
-        println("Введите свою биографию:")
-        bio = readln()
-    }
-
-    fun changePassUser() {
-        println("Введите старый пароль")
-        if (readln() == password) {
-            println("Введите новый пароль")
-            password = readln()
-            println("Пароль измене!")
-        } else println("Ошибка исходного пароля")
     }
 
     fun sendMessUser() {
@@ -56,25 +33,28 @@ class User() {
 }
 
 class Forum() {
-    val allMess = mutableListOf<String>()
+    var uniqueID = 1
+    val allMessages = mutableListOf<String>()
 
-    fun newUser(): User {
-        return User()
+    fun newUser(login: String): User{
+        val newUser = User(uniqueID ,login)
+        uniqueID++
+        return newUser
     }
 
-    fun newMessage(authorId: Int, author: String) {
-        println("введите сообщение")
-        val userMes = "$authorId $author: ${readln()}"
+    fun newMessage(authorId: Int, author: String, message: String) {
+        val userMes = "$authorId $author: $message"
         println(userMes)
-        saveAllMess(userMes)
+        println()
+        saveAllMessage(userMes)
     }
 
-    fun saveAllMess(messenge: String) {
-        allMess.add(messenge)
+    fun saveAllMessage(message: String) {
+        allMessages.add(message)
     }
 
-    fun printThread(allMess: MutableList<String>) {
-        allMess.forEach { println(it) }
+    fun printThread(allMessages: MutableList<String>) {
+        allMessages.forEach { println(it) }
     }
 
 }
