@@ -4,8 +4,6 @@ val allContactPerson = mutableListOf<PhoneContactTask4>()
 
 fun main() {
     inputUserContact()
-
-
     printContactList(allContactPerson)
 }
 
@@ -38,7 +36,7 @@ fun addContactUser(contact: PhoneContactTask4) {
     else allContactPerson.add(contact)
 }
 
-fun printContactList(list: MutableList<PhoneContactTask4>) {
+fun printContactList(list: List<PhoneContactTask4>) {
     for (i in list) {
         println("Имя: ${i.namePerson ?: "[не указано]"}\nНомер: ${i.phonePerson ?: "[не указано]"}\nКомпания: ${i.companyPerson ?: "[не указано]"}\n")
     }
@@ -49,9 +47,4 @@ class PhoneContactTask4() {
     var phonePerson: Int? = null
     var companyPerson: String? = null
 
-    constructor(_namePerson: String?, _phonePerson: Int?, _companyPerson: String?) : this() {
-        namePerson = _namePerson
-        phonePerson = _phonePerson
-        companyPerson = _companyPerson
-    }
 }
