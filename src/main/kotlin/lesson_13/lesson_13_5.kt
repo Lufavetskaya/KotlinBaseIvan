@@ -1,10 +1,10 @@
 package lesson_13
 
-val allContactPerson = mutableListOf<PhoneContactTask5>()
+val listAllContactPerson = mutableListOf<PhoneContactTask5>()
 
 fun main() {
     inputUserContact5()
-    printContactList5(allContactPerson)
+    printContactList5(listAllContactPerson)
 }
 
 fun inputUserContact5() {
@@ -26,34 +26,27 @@ fun inputUserContact5() {
 
         addContactUser5(newContact)
 
-        println("Хотите бросить кости еще раз Введите Да или Нет")
+        println("Хотите создать еще контакт")
         val goodAnswerForAdd = "Да"
     } while (readln() == goodAnswerForAdd)
 }
 
 fun addContactUser5(contact: PhoneContactTask5) {
     if (contact.phonePerson == null) println("Контакт без номера не будет добавлен")
-    else allContactPerson.add(contact)
+    else listAllContactPerson.add(contact)
 }
 
-fun printContactList5(list: MutableList<PhoneContactTask5>) {
+fun printContactList5(list: List<PhoneContactTask5>) {
     for (i in list) {
         println("Имя: ${i.namePerson ?: "[не указано]"}\nНомер: ${i.phonePerson ?: "[не указано]"}\nКомпания: ${i.companyPerson ?: "[не указано]"}\n")
     }
 }
 
 fun checkInputNum(string: String, contact: PhoneContactTask5) {
-    val rangeABC = ('a'..'z')
-    val rangeABCD = ('A'..'Z')
-
-    val arrayCharString = string.toCharArray()
-    for (i in arrayCharString) {
-        if (i in rangeABC || i in rangeABCD) {
-            println("Номер может содержать только  цифры")
-            break
-        } else {
-            contact.phonePerson = string.toLong()
-        }
+    try {
+        contact.phonePerson = string.toLong()
+    } catch (e: NumberFormatException) {
+        println("номер может содержать только цифры.")
     }
 }
 
@@ -61,10 +54,4 @@ class PhoneContactTask5() {
     var namePerson: String? = null
     var phonePerson: Long? = null
     var companyPerson: String? = null
-
-    constructor(_namePerson: String?, _phonePerson: Long?, _companyPerson: String?) : this() {
-        namePerson = _namePerson
-        phonePerson = _phonePerson
-        companyPerson = _companyPerson
-    }
 }
