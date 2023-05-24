@@ -1,6 +1,7 @@
 package lesson_11
 
 fun main() {
+
     val firstUserA: UserChat = UserChat("Банан", "ссылка на картинку")
     val secondUserA: UserChat = UserChat("Ананас", "ссылка на картинку")
 
