@@ -3,10 +3,6 @@ package lesson_12
 import kotlin.random.Random
 
 fun main() {
-    var averageTDay = 0
-    var averageTNight = 0
-    var rainDay = 0
-    var averagePressure = 0
 
     val listWeather = mutableListOf<KeepWeather5>()
 
@@ -19,22 +15,24 @@ fun main() {
         )
         listWeather.add(dayWeather)
     }
+    var rainDay = 0
 
     for (day in listWeather) {
         if (day.rain) rainDay++
-        averageTDay += day.temperatureDay
-        averageTNight += day.temperatureNight
-        averagePressure += day.atmosphericPressure
     }
 
-    println("Дождик шел: ${rainDay} дней\nДнем было в среднем: ${averageTDay / listWeather.size}С\nНочью было в среднем: ${averageTNight / listWeather.size}С\nДавление среднее за деньки: ${averagePressure / listWeather.size}")
+    val averageTDay = listWeather.map { it.temperatureDay }.average()
+    val averageTNight = listWeather.map { it.temperatureNight }.average()
+    val averagePressure = listWeather.map { it.atmosphericPressure }.average()
+
+    println("Дождик шел: ${rainDay} дней\nДнем было в среднем: $averageTDay\nНочью было в среднем: $averageTNight\nДавление среднее за деньки: $averagePressure")
 }
 
 class KeepWeather5(
     var temperatureDay: Int,
     var temperatureNight: Int,
     var rain: Boolean = false,
-    var atmosphericPressure: Int
+    var atmosphericPressure: Int,
 ) {
 
     init {
