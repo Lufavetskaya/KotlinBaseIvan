@@ -7,7 +7,7 @@ fun main() {
     val roomOne = CardRoom(
         avatarRoom = "link",
         nameRoom = "Room One",
-        setUser = setOf(firstUserA.avatarUser, secondUserA.avatarUser)
+        setUser = setOf(firstUserA, secondUserA)
     )
 
     val firstUserB: UserChat = UserChat("Стейк", "ссылка на картинку")
@@ -18,7 +18,7 @@ fun main() {
     val roomTwo = CardRoom(
         avatarRoom = "link",
         nameRoom = "Room Two",
-        setUser = setOf(firstUserB.avatarUser, secondUserB.avatarUser, thirdUserB.avatarUser, fourthUserB.avatarUser)
+        setUser = setOf(firstUserB, secondUserB, thirdUserB, fourthUserB)
     )
 
     val setRoom = setOf<CardRoom>(roomOne, roomTwo)
@@ -27,12 +27,12 @@ fun main() {
 class UserChat(
     val nameUser: String,
     var avatarUser: String,
-    var statusUser: String = ""
+    val listStatusUser: List<String> = listOf<String>("разговаривает", "микрофон выключен", "пользователь заглушен")
 )
 
 class CardRoom(
     val avatarRoom: String,
     var nameRoom: String,
-    var setUser: Set<String>,
+    var setUser: Set<UserChat>,
 )
 
