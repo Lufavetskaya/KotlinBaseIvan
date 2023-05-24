@@ -3,9 +3,12 @@ package lesson_14
 fun main() {
 
     val message1 = MessageForum("Gocha", "Мы нашли совесткую монетку!")
+
+    val post1 = message1.printMess()
+
     val comment1 = CommentForum("Krosh", "Какой молоддец, братиш!")
 
-    comment1.printComment(message1.printMess())
+    comment1.printComment(post1)
 
 }
 
@@ -14,7 +17,9 @@ open class MessageForum(
     val messageAuthor: String?,
 ) {
     fun printMess(): String {
-        return "Пост от Автора: $nameAuthor\nТекст поста: $messageAuthor"
+        val message = "Пост от Автора: $nameAuthor\nТекст поста: $messageAuthor"
+        println(message)
+        return message
     }
 
 }
