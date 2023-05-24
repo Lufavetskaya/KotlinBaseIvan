@@ -25,6 +25,4 @@ class User1(
     val login: String,
     val password: String,
     val email: String,
-) {
-
-}
+)
