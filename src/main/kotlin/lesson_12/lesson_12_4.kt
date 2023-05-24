@@ -1,4 +1,4 @@
-package lessson_12
+package lesson_12
 
 fun main(){
     val seventhDayLife = KeepWeather4(12, 13, atmosphericPressure = 660)
