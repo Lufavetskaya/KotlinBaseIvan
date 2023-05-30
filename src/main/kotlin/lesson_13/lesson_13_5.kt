@@ -8,22 +8,19 @@ fun main() {
 }
 
 fun inputUserContact5() {
-    println("Добавьте хотя бы 1 конаткт:")
+    println("Добавьте хотя бы 1 контакт:")
     do {
-        val newContact = PhoneContactTask5()
-
         println("Введите имя")
-        newContact.namePerson = readln()
+        val namePerson = readln()
 
         println("Введите номер телефона")
-        val phoneContact = readln()
-        if (phoneContact.isNotEmpty()) {
-            checkInputNum(phoneContact, newContact)
-        }
+        val inputUserPhoneString: String = readln()
+        val phonePerson = checkInputNum(inputUserPhoneString)
 
         println("Введите компанию")
-        newContact.companyPerson = readln()
+        val companyPerson = readln()
 
+        val newContact = PhoneContactTask5(namePerson, phonePerson, companyPerson)
         addContactUser5(newContact)
 
         println("Хотите создать еще контакт")
@@ -38,20 +35,21 @@ fun addContactUser5(contact: PhoneContactTask5) {
 
 fun printContactList5(list: List<PhoneContactTask5>) {
     for (i in list) {
-        println("Имя: ${i.namePerson ?: "[не указано]"}\nНомер: ${i.phonePerson ?: "[не указано]"}\nКомпания: ${i.companyPerson ?: "[не указано]"}\n")
+        println("Имя: ${i.namePerson?.takeIf { !it.isNullOrEmpty() } ?: "[не указано]"}\nНомер: ${i.phonePerson}\nКомпания: ${i.companyPerson?.takeIf { !it.isNullOrEmpty() } ?: "[не указано]"}\n")
     }
 }
 
-fun checkInputNum(string: String, contact: PhoneContactTask5) {
-    try {
-        contact.phonePerson = string.toLong()
+fun checkInputNum(string: String): Long? {
+    return try {
+        string.toLong()
     } catch (e: NumberFormatException) {
         println("номер может содержать только цифры.")
+        null
     }
 }
 
-class PhoneContactTask5() {
-    var namePerson: String? = null
-    var phonePerson: Long? = null
-    var companyPerson: String? = null
-}
+class PhoneContactTask5(
+    val namePerson: String? = null,
+    val phonePerson: Long?,
+    val companyPerson: String? = null,
+)
