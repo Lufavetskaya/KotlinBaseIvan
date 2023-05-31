@@ -4,11 +4,11 @@ fun main() {
 
     val message1 = MessageForum("Gocha", "Мы нашли совесткую монетку!")
 
-    val post1 = message1.printMess()
+    message1.printMess()
 
     val comment1 = CommentForum("Krosh", "Какой молоддец, братиш!")
 
-    comment1.printComment(post1)
+    comment1.printComment(message1)
 
 }
 
@@ -29,8 +29,8 @@ class CommentForum(
     messageAuthor: String?,
 ) : MessageForum(nameAuthor, messageAuthor) {
 
-    fun printComment(post: String) {
-        println(post)
+    fun printComment(post: MessageForum) {
+        println("К посту Автора:  ${post.nameAuthor}")
         println("Коммент от Автора: $nameAuthor\nТекст коммента: $messageAuthor")
     }
 }
