@@ -14,7 +14,7 @@ fun main() {
 
 }
 
-abstract class BaseEntityForum() {
+abstract class BaseEntityForum {
     abstract val nameUser: String
     abstract val typeUser: String
 
@@ -22,13 +22,12 @@ abstract class BaseEntityForum() {
         println("Чтение форума $nameUser")
     }
 
-    fun printMessage(nameUser: String, typeUser: String){
+    fun printMessage(nameUser: String, typeUser: String) {
         println("Написано сообщение $nameUser $typeUser")
     }
 }
 
-class User(override val nameUser: String, override val typeUser: String) : BaseEntityForum() {
-}
+class User(override val nameUser: String, override val typeUser: String) : BaseEntityForum()
 
 class AdminForum(override val nameUser: String, override val typeUser: String) : BaseEntityForum() {
 
