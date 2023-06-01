@@ -13,7 +13,7 @@ fun main() {
 abstract class UnderlyingMessage(
     val nameServer: String
 ) {
-    fun connectToServer(nameServer: String) {
+    fun connectToServer() {
         println("Подключились к серверу $nameServer.")
     }
 
@@ -25,7 +25,7 @@ abstract class UnderlyingMessage(
 
 class DataTemperature(nameServer: String) : UnderlyingMessage(nameServer) {
     override fun sendData() {
-        super.connectToServer(nameServer)
+        super.connectToServer()
         println("Отправили данные о температуре на сервер $nameServer.")
     }
 
@@ -33,7 +33,7 @@ class DataTemperature(nameServer: String) : UnderlyingMessage(nameServer) {
 
 class DataRain(nameServer: String) : UnderlyingMessage(nameServer) {
     override fun sendData() {
-        super.connectToServer(nameServer)
+        super.connectToServer()
         println("Отправили данные о дожде на сервер $nameServer.")
     }
 }
