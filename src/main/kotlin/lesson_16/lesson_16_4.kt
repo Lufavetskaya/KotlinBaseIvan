@@ -6,7 +6,7 @@ fun main() {
 
 }
 
-class Order(private val numberOrder: Int, var statusOrder: String) {
+class Order(private val numberOrder: Int, private var statusOrder: String) {
 
     fun callManager(status: String) {
         println("Обращение к менеджеру для замены статуса заказа")
