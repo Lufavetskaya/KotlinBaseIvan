@@ -3,9 +3,9 @@ package lesson_16
 fun main() {
     val player = Player("Kosh", 40, 70)
     player.heal(60)
-    player.damage(100)
+    player.damage(10)
     player.heal(50)
-
+    player.damage(200)
 }
 
 class Player(
@@ -20,15 +20,19 @@ class Player(
         } else println("Персонаж уже отлетел. Нельзя похилить.")
     }
 
-    private fun death() {
-        if (hpPlayer <= 0) println("Персонаж погиб")
-        hpPlayer = 0
-        damagePlayer = 0
-    }
-
     fun damage(damage: Int) {
         hpPlayer -= damage
         println("Персонаж получил урон на $damage.\nУровень здоровья: $hpPlayer")
-        death()
+        checkHP(hpPlayer)
+    }
+
+    private fun checkHP(hpPlayer: Int) {
+        if (hpPlayer <= 0) death()
+    }
+
+    private fun death() {
+        println("Персонаж погиб")
+        hpPlayer = 0
+        damagePlayer = 0
     }
 }
