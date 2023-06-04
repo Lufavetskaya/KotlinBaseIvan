@@ -2,15 +2,15 @@ package lesson_15
 
 fun main() {
     val newUser = User("Krosh", "User")
-    newUser.printMessage(newUser.nameUser, newUser.typeUser)
-    newUser.readForum(newUser.nameUser)
+    newUser.printMessage()
+    newUser.readForum()
     println()
 
     val newAdmin = AdminForum("Bro", "Admin")
-    newAdmin.readForum(newAdmin.nameUser)
+    newAdmin.readForum()
     newAdmin.deleteMessage()
     newAdmin.deleteUser()
-    newAdmin.printMessage(newAdmin.nameUser, newAdmin.typeUser)
+    newAdmin.printMessage()
 
 }
 
@@ -18,11 +18,11 @@ abstract class BaseEntityForum {
     abstract val nameUser: String
     abstract val typeUser: String
 
-    fun readForum(nameUser: String) {
+    fun readForum() {
         println("Чтение форума $nameUser")
     }
 
-    fun printMessage(nameUser: String, typeUser: String) {
+    fun printMessage() {
         println("Написано сообщение $nameUser $typeUser")
     }
 }
@@ -32,7 +32,7 @@ class User(override val nameUser: String, override val typeUser: String) : BaseE
 class AdminForum(override val nameUser: String, override val typeUser: String) : BaseEntityForum() {
 
     fun deleteUser() {
-        println("Удален пользоватлеь, нарушающий правила сообщества")
+        println("Удален пользователь, нарушающий правила сообщества")
     }
 
     fun deleteMessage() {
