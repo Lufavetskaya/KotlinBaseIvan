@@ -1,14 +1,12 @@
 package lesson_16
 
-import kotlin.math.sqrt
-
-const val PI = 3.14
+import kotlin.math.PI
+import kotlin.math.pow
 
 fun main() {
-    val firstCircle = Circle(2.0)
+    val firstCircle = Circle(5.0)
     println("Площадь круга ${firstCircle.areaOfCircle()}")
     println("Длина окружности ${firstCircle.circumference()}")
-
 }
 
 class Circle(private val radius: Double) {
@@ -17,6 +15,6 @@ class Circle(private val radius: Double) {
     }
 
     fun areaOfCircle(): Double {
-        return PI * sqrt(radius)
+        return PI * radius.pow(2)
     }
 }
