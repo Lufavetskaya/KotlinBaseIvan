@@ -23,10 +23,10 @@ class Player(
     fun damage(damage: Int) {
         hpPlayer -= damage
         println("Персонаж получил урон на $damage.\nУровень здоровья: $hpPlayer")
-        checkHP(hpPlayer)
+        checkHP()
     }
 
-    private fun checkHP(hpPlayer: Int) {
+    private fun checkHP() {
         if (hpPlayer <= 0) death()
     }
 
