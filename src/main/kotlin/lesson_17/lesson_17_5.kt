@@ -28,7 +28,7 @@ class User(
         }
         get() {
             var secretPassword: String = ""
-            repeat(initPasswordUser.length) {
+            repeat(field.length) {
                 secretPassword += "*"
             }
             return secretPassword
