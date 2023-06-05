@@ -12,10 +12,8 @@ class Package(
     val defaultSecretFlag: Boolean = false,
 ){
     var namePackage: String = initNamePackage
-        get() = if (defaultSecretFlag == true) "скрытая папка" else field
+        get() = if (defaultSecretFlag) "скрытая папка" else field
 
     var qtFile: Int = initQtFile
-        get() = if (defaultSecretFlag == true) 0 else field
-
-
+        get() = if (defaultSecretFlag) 0 else field
 }
