@@ -1,7 +1,7 @@
 package lesson_17
 
 fun main() {
-    val firstUser = User("Krosh", "12345")
+    val firstUser = User("Krosh", "123456")
 
     println("Логин: ${firstUser.loginUser}\nПароль: ${firstUser.passwordUser}")
 
@@ -24,7 +24,7 @@ class User(
 
     var passwordUser: String = initPasswordUser
         set(value) {
-            if (value != field) println("Вы не можете изменить пароль")
+            println("Вы не можете изменить пароль")
         }
         get() {
             var secretPassword: String = ""
