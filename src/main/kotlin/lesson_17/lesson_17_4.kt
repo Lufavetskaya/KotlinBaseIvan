@@ -9,7 +9,7 @@ fun main() {
 }
 
 class Parcel(
-    private val NumberParcel: Int,
+    private val numberParcel: Int,
     private val initLocationParcel: String,
     var countTransfers: Int = 0
 ) {
