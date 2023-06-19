@@ -14,8 +14,8 @@ fun main() {
     printInfoAllOrders(arrayOrders)
 }
 
-open class Order() {
-    open fun infoOrder() {}
+abstract class Order() {
+    abstract fun infoOrder()
 }
 
 class SmallOrder(
