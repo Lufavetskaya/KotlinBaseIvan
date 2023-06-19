@@ -14,8 +14,8 @@ fun main() {
     allDiceRoll(allDiceArray)
 }
 
-open class Dice {
-    open fun rollDice() {}
+abstract class Dice {
+    abstract fun rollDice()
 }
 
 class OriginDice : Dice() {
