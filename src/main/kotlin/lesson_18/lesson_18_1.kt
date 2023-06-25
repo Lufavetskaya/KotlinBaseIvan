@@ -33,13 +33,7 @@ class BigOrder(
 ) : Order() {
     override fun infoOrder() {
         print("Номер заказа: $numberOrder\nЗаказаны следующие товары: ")
-        contentOrder.forEach {
-            if (contentOrder.indexOf(it) != contentOrder.lastIndex) {
-                print("$it, ")
-            } else {
-                print(it)
-            }
-        }
+        print(contentOrder.joinToString ( ", " ))
     }
 }
 
