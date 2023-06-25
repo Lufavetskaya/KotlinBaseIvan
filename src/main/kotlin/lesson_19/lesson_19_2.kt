@@ -2,7 +2,7 @@ package lesson_19
 
 fun main() {
     val firstItem = Item("штанцы", 1, Category.CLOTH)
-    val secondItem = Item( "банка колы", 2, Category.OTHER)
+    val secondItem = Item("банка колы", 2, Category.OTHER)
 
     firstItem.printInfoItem()
     println()
@@ -21,16 +21,15 @@ class Item(
     private val category: Category,
 ) {
     fun printInfoItem() {
-        println("Товар: $nameItem\nАртикул: $idItem")
-        getCategory(category)
+        println("Товар: $nameItem\nАртикул: $idItem\n${getCategory(category)}")
     }
 
 }
 
-fun getCategory(category: Category) {
-    when (category) {
-        Category.CLOTH -> println("Категория: одежда")
-        Category.STATIONERY -> println("Категория: канцелярские товары")
-        Category.OTHER -> println("Категория: разное")
+fun getCategory(category: Category): String {
+    return when (category) {
+        Category.CLOTH -> "Категория: одежда"
+        Category.STATIONERY -> "Категория: канцелярские товары"
+        Category.OTHER -> "Категория: разное"
     }
 }
