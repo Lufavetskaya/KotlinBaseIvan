@@ -6,37 +6,29 @@ fun main() {
     var name: String
     var gender: String?
 
-    println("Введите имя и пол на отдельных строках, разделяя имя и гендер нжатием enter")
+    println("Введите имя и пол на отдельных строках, разделяя имя и гендер нажатием enter")
     println("Возможные гендеры: ${Gender.values().joinToString()}")
 
     repeat(5) {
         println("Введите имя:")
         name = readln()
 
-        do {
-            println("Введите пол (FEMALE или MALE):")
-            gender = readln()
+        println("Введите пол (FEMALE или MALE):")
+        gender = readln()
+        val genderEnum: Gender =
+            Gender.values().find { it.name == gender } ?: Gender.UNKNOWN
 
-            val genderEnum: Gender? = try {
-                Gender.valueOf(gender!!)
-            } catch (e: IllegalArgumentException) {
-                println("Неверное значение пола.")
-                null
-            }
-        } while (genderEnum == null)
-
-
-        val person = Person(name, Gender.valueOf(gender!!))
+        val person = Person(name, genderEnum)
         firstFilingSystem.addPerson(person)
     }
 
     firstFilingSystem.print()
-
 }
 
 enum class Gender {
     FEMALE,
     MALE,
+    UNKNOWN,
 }
 
 class Person(
