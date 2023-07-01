@@ -1,16 +1,12 @@
 package lesson_20
 
 fun main() {
-    val lambdaCheckKey: (PlayerKeyFinder) -> Unit = { it: PlayerKeyFinder ->
-        if (it.haveKey) println("${it.name} открыл дверь")
-        else println("дверь заперта")
-    }
 
     val firstPlayerKeyFinder = PlayerKeyFinder("Bratish")
 
-    lambdaCheckKey(firstPlayerKeyFinder)
+    firstPlayerKeyFinder.lambdaCheckKey(firstPlayerKeyFinder)
     firstPlayerKeyFinder.discoveredKey()
-    lambdaCheckKey(firstPlayerKeyFinder)
+    firstPlayerKeyFinder.lambdaCheckKey(firstPlayerKeyFinder)
 }
 
 class PlayerKeyFinder(
@@ -20,5 +16,10 @@ class PlayerKeyFinder(
     fun discoveredKey() {
         haveKey = true
         println("$name нашел ключ!")
+    }
+
+    val lambdaCheckKey: PlayerKeyFinder.() -> Unit = {
+        if (haveKey) println("${name} открыл дверь")
+        else println("дверь заперта")
     }
 }
